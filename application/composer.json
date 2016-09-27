@@ -54,7 +54,6 @@
         "doctrine/doctrine-fixtures-bundle": "2.3.*",
         "arsgeografica/signing": "1.1.x",
         "phayes/geophp": "1.x",
-        "viscreation/vis-ui.js": "0.0.x",
         "igosuki/compass-mixins": "0.x",
         "fontfacekit/open-sans": "1.4.x",
         "eslider/sasscb":  "3.1.x",
@@ -67,11 +66,12 @@
         "setasign/fpdi-fpdf": "1.6.*",
         "mapbender/documentation": "dev-master as 3.0.5.4",
 
-        "eslider/hkv-storage": "dev-master as 0.0.1",
-        "mapbender/data-source": "dev-master as 0.0.100",
-        "mapbender/digitizer": "dev-master as 1.1.100",
-        "mapbender/configurator": "dev-master as 0.0.1",
-        "mapbender/search": "dev-master as 0.0.1"
+        "viscreation/vis-ui.js": "dev-master as 0.0.1000",
+        "eslider/hkv-storage": "dev-master as 0.0.10000",
+        "mapbender/data-source": "dev-master as 0.0.1000",
+        "mapbender/digitizer": "dev-master as 1.1.1000",
+        "mapbender/configurator": "dev-master as 0.0.1000",
+        "mapbender/search": "dev-master as 0.0.1000"
     },
     "scripts": {
         "post-install-cmd": [
