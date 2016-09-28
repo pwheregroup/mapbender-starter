@@ -64,12 +64,12 @@
         "components/underscore": "1.x",
         "components/joii": "3.1.x",
         "setasign/fpdi-fpdf": "1.6.*",
-        "mapbender/documentation": "dev-master as 3.0.5.4",
 
-        "viscreation/vis-ui.js": "dev-master as 0.0.1000",
+        "mapbender/documentation": "dev-master as 3.0.5.4",
+        "viscreation/vis-ui.js": "dev-feature/querymanager as 0.0.1000",
         "eslider/hkv-storage": "dev-master as 0.0.10000",
-        "mapbender/data-source": "dev-master as 0.0.1000",
-        "mapbender/digitizer": "dev-master as 1.1.1000",
+        "mapbender/data-source": "dev-feature/migrate-feature-type as 0.0.1000",
+        "mapbender/digitizer": "dev-feature/migrate-feature-type as 1.1.1000",
         "mapbender/configurator": "dev-master as 0.0.1000",
         "mapbender/search": "dev-master as 0.0.1000"
     },
