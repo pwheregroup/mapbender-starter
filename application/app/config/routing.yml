@@ -1,36 +1,27 @@
-# Per default, the application list is the start page. You may change that to fit your project's needs.
+mapbender_configuratorbundle:
+    resource: '@MapbenderConfiguratorBundle/Controller/'
+    type: annotation
 mapbender_start:
-    path: "/"
-    defaults: { _controller: MapbenderCoreBundle:Welcome:list}
-
+    path: /
+    defaults: { _controller: 'MapbenderCoreBundle:Welcome:list' }
 mapbender_corebundle:
-    resource: "@MapbenderCoreBundle/Controller/"
+    resource: '@MapbenderCoreBundle/Controller/'
     type: annotation
-
 mapbender_managerbundle:
-    resource: "@MapbenderManagerBundle/Controller/"
+    resource: '@MapbenderManagerBundle/Controller/'
     type: annotation
-
-mapbender_wmsbundle:
-    resource: "@MapbenderWmsBundle/Controller/"
-    type: annotation
-
 fom_managerbundle:
-    resource: "@FOMManagerBundle/Controller"
+    resource: '@FOMManagerBundle/Controller'
     type: annotation
-
 fom_userbundle:
-    resource: "@FOMUserBundle/Controller"
+    resource: '@FOMUserBundle/Controller'
     type: annotation
-
 ows_corebundle:
-    resource: "@OwsProxy3CoreBundle/Controller/"
-    prefix: "/owsproxy"
+    resource: '@OwsProxy3CoreBundle/Controller/'
+    prefix: /owsproxy
     type: annotation
-
 fos_js_routing:
-    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
-
-mapbender_configurator:
-    resource: "@MapbenderConfiguratorBundle/Controller/"
+    resource: '@FOSJsRoutingBundle/Resources/config/routing/routing.xml'
+mapbender_datasourcebundle:
     type: annotation
+    resource: '@MapbenderDataSourceBundle/Controller/'
