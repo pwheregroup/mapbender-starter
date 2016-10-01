@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2cdc95e39d425412de3d83851d2dea1",
-    "content-hash": "33d5aca177f54142adf17be7c59d6093",
+    "hash": "29d6d04e1dd8d0b0bae2f4f9ef5c01cb",
+    "content-hash": "7d3b4ae7302a774026be5a14f5f6bfe2",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -2283,12 +2283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/configurator.git",
-                "reference": "68b7be7f2155d5e2a349bb552d83b49810052ce7"
+                "reference": "1ed032b4142bfbe8d8d4b9c62336892e8c582b76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/configurator/zipball/68b7be7f2155d5e2a349bb552d83b49810052ce7",
-                "reference": "68b7be7f2155d5e2a349bb552d83b49810052ce7",
+                "url": "https://api.github.com/repos/mapbender/configurator/zipball/1ed032b4142bfbe8d8d4b9c62336892e8c582b76",
+                "reference": "1ed032b4142bfbe8d8d4b9c62336892e8c582b76",
                 "shasum": ""
             },
             "require": {
@@ -2317,26 +2317,30 @@
                 }
             ],
             "description": "Mapbender configuration module",
-            "time": "2016-09-27 14:41:33"
+            "time": "2016-09-30 09:35:12"
         },
         {
             "name": "mapbender/data-source",
-            "version": "dev-master",
+            "version": "dev-feature/migrate-feature-type",
             "target-dir": "Mapbender/DataSourceBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/data-source.git",
-                "reference": "d111a6889e3f9f809491c9f78e47ea72e8a2faed"
+                "reference": "312cda4ef6a66abd90ea405bc75385f7d2dc21ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/data-source/zipball/d111a6889e3f9f809491c9f78e47ea72e8a2faed",
-                "reference": "d111a6889e3f9f809491c9f78e47ea72e8a2faed",
+                "url": "https://api.github.com/repos/mapbender/data-source/zipball/312cda4ef6a66abd90ea405bc75385f7d2dc21ce",
+                "reference": "312cda4ef6a66abd90ea405bc75385f7d2dc21ce",
                 "shasum": ""
             },
             "require": {
                 "phayes/geophp": "1.2",
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^3.7",
+                "symfony/framework-bundle": "*"
             },
             "type": "library",
             "autoload": {
@@ -2360,21 +2364,21 @@
                 "data source",
                 "mapbender"
             ],
-            "time": "2016-08-05 09:30:23"
+            "time": "2016-09-30 13:37:19"
         },
         {
             "name": "mapbender/digitizer",
-            "version": "dev-master",
+            "version": "dev-feature/migrate-feature-type",
             "target-dir": "Mapbender/DigitizerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender-digitizer.git",
-                "reference": "ae2a4d20a3e186c8b7055a8f221f55119c28f245"
+                "reference": "941df909d4b8faf6b790c4bd014240e5cc611b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender-digitizer/zipball/ae2a4d20a3e186c8b7055a8f221f55119c28f245",
-                "reference": "ae2a4d20a3e186c8b7055a8f221f55119c28f245",
+                "url": "https://api.github.com/repos/mapbender/mapbender-digitizer/zipball/941df909d4b8faf6b790c4bd014240e5cc611b75",
+                "reference": "941df909d4b8faf6b790c4bd014240e5cc611b75",
                 "shasum": ""
             },
             "require": {
@@ -2416,7 +2420,7 @@
                 "digitizing",
                 "mapbender"
             ],
-            "time": "2016-09-01 09:52:35"
+            "time": "2016-09-28 09:14:21"
         },
         {
             "name": "mapbender/documentation",
@@ -2424,12 +2428,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender-documentation.git",
-                "reference": "a4ae7b53ce8607f0af23b8a36a6625de8a3a8b4a"
+                "reference": "0b8a69d043a7bb41900759f62b195a7fa5268130"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender-documentation/zipball/a4ae7b53ce8607f0af23b8a36a6625de8a3a8b4a",
-                "reference": "a4ae7b53ce8607f0af23b8a36a6625de8a3a8b4a",
+                "url": "https://api.github.com/repos/mapbender/mapbender-documentation/zipball/0b8a69d043a7bb41900759f62b195a7fa5268130",
+                "reference": "0b8a69d043a7bb41900759f62b195a7fa5268130",
                 "shasum": ""
             },
             "require": {
@@ -2451,7 +2455,7 @@
                 "documentation",
                 "mapbender"
             ],
-            "time": "2016-09-16 13:13:28"
+            "time": "2016-09-29 10:30:42"
         },
         {
             "name": "mapbender/mapbender-icons",
@@ -2506,12 +2510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/search.git",
-                "reference": "b3b42dbfddccd6f96791b28f1db1ec7e269e196c"
+                "reference": "b5f8761cb13ebb7b5681dd30e89bd8cb8df17619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/search/zipball/b3b42dbfddccd6f96791b28f1db1ec7e269e196c",
-                "reference": "b3b42dbfddccd6f96791b28f1db1ec7e269e196c",
+                "url": "https://api.github.com/repos/mapbender/search/zipball/b5f8761cb13ebb7b5681dd30e89bd8cb8df17619",
+                "reference": "b5f8761cb13ebb7b5681dd30e89bd8cb8df17619",
                 "shasum": ""
             },
             "require": {
@@ -2542,7 +2546,7 @@
                 "search",
                 "searching"
             ],
-            "time": "2016-09-23 12:56:42"
+            "time": "2016-09-30 17:16:06"
         },
         {
             "name": "medialize/jquery-context-menu",
@@ -3847,16 +3851,16 @@
         },
         {
             "name": "viscreation/vis-ui.js",
-            "version": "dev-master",
+            "version": "dev-feature/querymanager",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eSlider/vis-ui.js.git",
-                "reference": "a2e5426a87909172e101b226a51970d3a39bc13b"
+                "reference": "0e704471f8d5e33b1ae34ac64ada207b366ecf31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eSlider/vis-ui.js/zipball/a2e5426a87909172e101b226a51970d3a39bc13b",
-                "reference": "a2e5426a87909172e101b226a51970d3a39bc13b",
+                "url": "https://api.github.com/repos/eSlider/vis-ui.js/zipball/0e704471f8d5e33b1ae34ac64ada207b366ecf31",
+                "reference": "0e704471f8d5e33b1ae34ac64ada207b366ecf31",
                 "shasum": ""
             },
             "require": {
@@ -3911,7 +3915,7 @@
                 "jquery",
                 "vis-ui"
             ],
-            "time": "2016-09-27 15:11:55"
+            "time": "2016-09-28 08:35:59"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -4321,7 +4325,6 @@
                 "rest",
                 "web service"
             ],
-            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
@@ -5664,7 +5667,7 @@
         {
             "alias": "0.0.1000",
             "alias_normalized": "0.0.1000.0",
-            "version": "9999999-dev",
+            "version": "dev-feature/querymanager",
             "package": "viscreation/vis-ui.js"
         },
         {
@@ -5676,13 +5679,13 @@
         {
             "alias": "0.0.1000",
             "alias_normalized": "0.0.1000.0",
-            "version": "9999999-dev",
+            "version": "dev-feature/migrate-feature-type",
             "package": "mapbender/data-source"
         },
         {
             "alias": "1.1.1000",
             "alias_normalized": "1.1.1000.0",
-            "version": "9999999-dev",
+            "version": "dev-feature/migrate-feature-type",
             "package": "mapbender/digitizer"
         },
         {
