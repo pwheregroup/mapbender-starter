@@ -1,0 +1,439 @@
+parameters:
+  applications:
+      test-digitizer:
+          title: Search & Digitizer Test
+          description: Digitalisierung Testumgebung
+          screenshot: ../mapbender_user_basic/mapbender_user_basic.png
+          published: true
+          visible: false
+          initializeOnStart: true
+          template:  Mapbender\CoreBundle\Template\Fullscreen
+          regionProperties:
+              - name: sidepane
+                properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
+          layersets:
+              main:
+                  osm:
+                      class: Mapbender\WmsBundle\Entity\WmsInstance
+                      title: OSM Demo
+                      url: http://osm-demo.wheregroup.com/service
+                      # url: http://172.16.2.124/map/service
+                      layers:
+                          30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                      info_format: text/html
+                      visible: true
+                      format: image/png
+                      transparent: false
+                      tiled: true
+                      opacity: 100
+          elements:
+              sidepane:
+                  geoSearch:
+                    title: 'Objektsuche'
+                    class: Mapbender\SearchBundle\Element\Search
+                    target: map
+
+                    # Shows DB errors as notify message directly
+                    debug: true
+
+                    # Loads JS files from "web" path.
+                    # For tests only!
+                    jsSrc:
+                        - /../vendor/viscreation/vis-ui.js/src/js/utils/DataUtil.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/utils/fn.formData.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/geo.toolset.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/date.selector.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/popup.dialog.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/jquery.form.generator.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/data.result-table.js
+
+                    # Test template
+                    #css: /../src/Wesseling/StadtBundle/Resources/public/stadt_theme.scss
+                    schemes:
+                        pacht:
+                            label: Pachtflächen
+                            maxResults: 1000
+                            featureType:
+                              connection: wesseling
+                              table: liegenschaften.pacht
+                              uniqueId: gid
+                              geomType: multipolygon
+                              geomField: the_geom
+                              srid: 31466
+                            openFormAfterEdit: true
+                            zoomScaleDenominator: 900
+                            allowEditData: true
+                            displayPermanent: false
+                            displayOnSelect: true
+                            inlineSearch: true
+                            #useContextMenu: true
+                            searchType: currentExtent
+                            pageLength: 100
+                            styles:
+                                default:
+                                    strokeWidth: 3
+                                    strokeColor: '#00ffff'
+                                    fillColor: '#00f300'
+                                    fillOpacity: 0
+                                    pointRadius: 10
+                                select:
+                                    strokeWidth: 4
+                                    fillColor: '#FF0000'
+                                    strokeColor: '#FF00FF'
+                                    fillOpacity: 1
+                                    pointRadius: 10
+                            toolset:
+                                - type: drawPolygon
+                                - type: modifyFeature
+                                - type: drawDonut
+                                - type: moveFeature
+                                - type: removeSelected
+                            popup:
+                                title: Pachtflächen
+                                width: 375px
+                            tableFields:
+                                gid:
+                                    label: id
+                                paechter_name:
+                                    label: Pächter
+                                bemerkung:
+                                    label: Bemerkung
+                            formItems:
+                                  - type: label
+                                    text: 'Fläche aus ALK übernehmen'
+                                    css: {margin-left: 10px; margin-right: 10px}
+                                  - type: fieldSet
+                                    children:
+                                      - type: select
+                                        options:
+                                          - "test"
+                                          - "asdasd"
+                                        css: {width: 30%}
+                                      - type: select
+                                        options:
+                                          d: "test"
+                                          x: "asdasd"
+                                        css: {width: 30%}
+
+                                      - type: select
+                                        text: Test array sort
+                                        connection: wesseling
+                                        sql: |
+                                          SELECT bilanzkonto, bilanzkonto || ' - ' || produkt || ' (' || bilanzkonto || ')' as produkt
+                                          FROM verkehr.bilanzkonto
+                                          ORDER BY bilanzkonto DESC
+                                        css: {width: 40%}
+
+                                  - type: fieldSet
+                                    children:
+                                      -   type: radio
+                                          name: flaeche_aus_alk
+                                          title: Ja
+                                          value: 1
+                                      -
+                                          type: radio
+                                          title: 'Fläche aus ALK übernehmen'
+                                          name: flaeche_aus_alk
+                                          title: Nein
+                                          value: 0
+                                  -
+                                      type: input
+                                      title: 'Name Pächter'
+                                      name: paechter_name
+                                      mandatory: true
+                                      mandatorytitle: 'Pflichtfeld - bitte füllen!'
+                                      mandatoryText: 'Bitte geben Sie den Pächternamen an.'
+                                  -
+                                      type: input
+                                      title: Vertragsabschluß
+                                      name: vertragsabschluss
+                                  -
+                                      type: input
+                                      title: Kündigungsfrist
+                                      name: kuendigungsfrist
+                                  -
+                                      type: input
+                                      title: Größe
+                                      name: groesse
+                                  -
+                                      type: textArea
+                                      title: Bemerkung
+                                      name: bemerkung
+                        boris_ipe:
+                            label: IPE
+                            maxResults: 1000
+                            featureType:
+                              connection: immobilien
+                              table: flimas.ipe
+                              geomType: polygone
+                              geomField: wkb_geometry
+                              srid: 31466
+                            openFormAfterEdit: true
+                            zoomScaleDenominator: 900
+                            allowEditData: true
+                            displayPermanent: false
+                            displayOnSelect: true
+                            inlineSearch: true
+                            searchType: currentExtent
+                            pageLength: 100
+                            styles:
+                                default:
+                                    strokeWidth: 3
+                                    strokeColor: '#00ffff'
+                                    fillColor: '#00f300'
+                                    fillOpacity: 0
+                                    pointRadius: 10
+                                select:
+                                    strokeWidth: 4
+                                    fillColor: '#FF0000'
+                                    strokeColor: '#FF00FF'
+                                    fillOpacity: 1
+                                    pointRadius: 10
+                            toolset:
+                                - type: drawPolygon
+                                - type: modifyFeature
+                                - type: drawDonut
+                                - type: moveFeature
+                                - type: removeSelected
+                            popup:
+                                title: Pachtflächen
+                                width: 375px
+                            tableFields:
+                                name:
+                                    label: Name
+                                ort:
+                                    label: Ort
+                            formItems:
+                                  - type: label
+                                    text: 'Fläche aus ALK übernehmen'
+                                    css: {margin-left: 10px; margin-right: 10px}
+                                  - type: fieldSet
+                                    children:
+                                      - type: select
+                                        options:
+                                          - "test"
+                                          - "asdasd"
+                                        css: {width: 30%}
+                                      - type: select
+                                        options:
+                                          d: "test"
+                                          x: "asdasd"
+                                        css: {width: 30%}
+
+                                      - type: select
+                                        text: Test array sort
+                                        connection: wesseling
+                                        sql: |
+                                          SELECT bilanzkonto, bilanzkonto || ' - ' || produkt || ' (' || bilanzkonto || ')' as produkt
+                                          FROM verkehr.bilanzkonto
+                                          ORDER BY bilanzkonto DESC
+                                        css: {width: 40%}
+
+                                  - type: fieldSet
+                                    children:
+                                      -   type: radio
+                                          name: flaeche_aus_alk
+                                          title: Ja
+                                          value: 1
+                                      -
+                                          type: radio
+                                          title: 'Fläche aus ALK übernehmen'
+                                          name: flaeche_aus_alk
+                                          title: Nein
+                                          value: 0
+                                  -
+                                      type: input
+                                      title: 'Name Pächter'
+                                      name: paechter_name
+                                      mandatory: true
+                                      mandatorytitle: 'Pflichtfeld - bitte füllen!'
+                                      mandatoryText: 'Bitte geben Sie den Pächternamen an.'
+                                  -
+                                      type: input
+                                      title: Vertragsabschluß
+                                      name: vertragsabschluss
+                                  -
+                                      type: input
+                                      title: Kündigungsfrist
+                                      name: kuendigungsfrist
+                                  -
+                                      type: input
+                                      title: Größe
+                                      name: groesse
+                                  -
+                                      type: textArea
+                                      title: Bemerkung
+                                      name: bemerkung
+                  digitizer:
+                    title: 'Pachtflächen Beabeitung'
+                    class: Mapbender\DigitizerBundle\Element\Digitizer
+                    target: map
+
+                    # Shows DB errors as notify message directly
+                    debug: true
+
+                    # Loads JS files from "web" path.
+                    # For tests only!
+                    jsSrc:
+                        - /../vendor/viscreation/vis-ui.js/src/js/utils/DataUtil.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/utils/fn.formData.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/geo.toolset.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/date.selector.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/popup.dialog.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/jquery.form.generator.js
+                        - /../vendor/viscreation/vis-ui.js/src/js/elements/data.result-table.js
+
+                    # Test template
+#                    css: /../src/Wesseling/StadtBundle/Resources/public/stadt_theme.scss
+                    schemes:
+                        pacht:
+                            label: Pachtflächen
+                            maxResults: 1000
+
+                            featureType:
+                              connection: wesseling
+                              table: liegenschaften.pacht
+                              uniqueId: gid
+                              geomType: multipolygon
+                              geomField: the_geom
+                              srid: 31466
+                              styleMap:
+                                default:
+                                  borderColor: "#000000 !important"
+
+                              Xevents:
+                                onBeforeSave: |
+                                  $errorMessage = "HEEELLLo";
+
+                            openFormAfterEdit: true
+                            zoomScaleDenominator: 900
+                            allowEditData: true
+                            allowDelete: true
+                            allowDigitize: true
+                            displayPermanent: false
+                            displayOnSelect: true
+                            inlineSearch: true
+                            #useContextMenu: true
+                            searchType: currentExtent
+                            pageLength: 100
+
+                            cClustering:
+                                -
+                                    scale: 10000
+                                    distance: 60
+                                    disable: true
+                                -
+                                    scale: 2500
+                                    distance: 40
+                                    disable: true
+                                -
+                                    scale: 1000
+                                    distance: 20
+                                    disable: true
+                                -
+                                    scale: 500
+                                    distance: 1
+                                    disable: true
+                            styles:
+                                default:
+                                    strokeWidth: 3
+                                    strokeColor: '#00ffff'
+                                    fillColor: '#00f300'
+                                    fillOpacity: 0
+                                    pointRadius: 10
+                                select:
+                                    strokeWidth: 4
+                                    fillColor: '#FF0000'
+                                    strokeColor: '#FF00FF'
+                                    fillOpacity: 1
+                                    pointRadius: 10
+                            toolset:
+                                - type: drawPolygon
+                                - type: modifyFeature
+                                - type: drawDonut
+                                - type: moveFeature
+                                - type: removeSelected
+                            popup:
+                                title: Pachtflächen
+                                width: 375px
+                            tableFields:
+                                gid:
+                                    label: id
+                                paechter_name:
+                                    label: Pächter
+                                bemerkung:
+                                    label: Bemerkung
+                            formItems:
+                                  - type: label
+                                    text: 'Fläche aus ALK übernehmen'
+                                    css: {margin-left: 10px; margin-right: 10px}
+                                  - type: fieldSet
+                                    children:
+                                      - type: select
+                                        options:
+                                          - "test"
+                                          - "asdasd"
+                                        css: {width: 30%}
+                                      - type: select
+                                        options:
+                                          d: "test"
+                                          x: "asdasd"
+                                        css: {width: 30%}
+
+                                      - type: select
+                                        text: Test array sort
+                                        connection: wesseling
+                                        sql: |
+                                          SELECT bilanzkonto, bilanzkonto || ' - ' || produkt || ' (' || bilanzkonto || ')' as produkt
+                                          FROM verkehr.bilanzkonto
+                                          ORDER BY bilanzkonto DESC
+                                        css: {width: 40%}
+
+                                  - type: fieldSet
+                                    children:
+                                      -   type: radio
+                                          name: flaeche_aus_alk
+                                          title: Ja
+                                          value: 1
+                                      -
+                                          type: radio
+                                          title: 'Fläche aus ALK übernehmen'
+                                          name: flaeche_aus_alk
+                                          title: Nein
+                                          value: 0
+                                  -
+                                      type: input
+                                      title: 'Name Pächter'
+                                      name: paechter_name
+                                      mandatory: true
+                                      mandatorytitle: 'Pflichtfeld - bitte füllen!'
+                                      mandatoryText: 'Bitte geben Sie den Pächternamen an.'
+                                  -
+                                      type: input
+                                      title: Vertragsabschluß
+                                      name: vertragsabschluss
+                                  -
+                                      type: input
+                                      title: Kündigungsfrist
+                                      name: kuendigungsfrist
+                                  -
+                                      type: input
+                                      title: Größe
+                                      name: groesse
+                                  -
+                                      type: textArea
+                                      title: Bemerkung
+                                      name: bemerkung
+              content:
+                  map:
+                      title: Main Map
+                      class: Mapbender\CoreBundle\Element\Map
+                      layersets: [main]
+                      srs: EPSG:25832 #31466|25832
+                      units: m
+                      extents:
+                          start: [353935.04227425,5629940.3776365,361747.08250313,5636702.4124583]
+                          max: [-500000,4350000,1600000,6850000]
+                      scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
+                      maxResolution: auto
+                      otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
