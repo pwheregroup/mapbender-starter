@@ -1313,12 +1313,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eSlider/hkv-storage.git",
-                "reference": "5759dceb43cfafa97fdd0ca384e2fd08655a9cbf"
+                "reference": "d462afdd184fe2deec142b203bac3d0805a570b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eSlider/hkv-storage/zipball/5759dceb43cfafa97fdd0ca384e2fd08655a9cbf",
-                "reference": "5759dceb43cfafa97fdd0ca384e2fd08655a9cbf",
+                "url": "https://api.github.com/repos/eSlider/hkv-storage/zipball/d462afdd184fe2deec142b203bac3d0805a570b5",
+                "reference": "d462afdd184fe2deec142b203bac3d0805a570b5",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1352,7 @@
                 "no-sql",
                 "sqlite"
             ],
-            "time": "2016-09-26 08:30:35"
+            "time": "2016-10-05 14:34:58"
         },
         {
             "name": "eslider/sasscb",
@@ -2326,12 +2326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/data-source.git",
-                "reference": "312cda4ef6a66abd90ea405bc75385f7d2dc21ce"
+                "reference": "1344c31cccb7aa121540dbacd3916dba708be659"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/data-source/zipball/312cda4ef6a66abd90ea405bc75385f7d2dc21ce",
-                "reference": "312cda4ef6a66abd90ea405bc75385f7d2dc21ce",
+                "url": "https://api.github.com/repos/mapbender/data-source/zipball/1344c31cccb7aa121540dbacd3916dba708be659",
+                "reference": "1344c31cccb7aa121540dbacd3916dba708be659",
                 "shasum": ""
             },
             "require": {
@@ -2364,7 +2364,7 @@
                 "data source",
                 "mapbender"
             ],
-            "time": "2016-09-30 13:37:19"
+            "time": "2016-10-05 12:49:28"
         },
         {
             "name": "mapbender/digitizer",
@@ -2373,12 +2373,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender-digitizer.git",
-                "reference": "941df909d4b8faf6b790c4bd014240e5cc611b75"
+                "reference": "4cc86d5019e6471266478e1b60892fe9ed78ef65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender-digitizer/zipball/941df909d4b8faf6b790c4bd014240e5cc611b75",
-                "reference": "941df909d4b8faf6b790c4bd014240e5cc611b75",
+                "url": "https://api.github.com/repos/mapbender/mapbender-digitizer/zipball/4cc86d5019e6471266478e1b60892fe9ed78ef65",
+                "reference": "4cc86d5019e6471266478e1b60892fe9ed78ef65",
                 "shasum": ""
             },
             "require": {
@@ -2420,7 +2420,7 @@
                 "digitizing",
                 "mapbender"
             ],
-            "time": "2016-09-28 09:14:21"
+            "time": "2016-10-06 15:07:20"
         },
         {
             "name": "mapbender/documentation",
@@ -2428,12 +2428,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender-documentation.git",
-                "reference": "0b8a69d043a7bb41900759f62b195a7fa5268130"
+                "reference": "803c4858cb956f3a9977b5621a2411afde60b4ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender-documentation/zipball/0b8a69d043a7bb41900759f62b195a7fa5268130",
-                "reference": "0b8a69d043a7bb41900759f62b195a7fa5268130",
+                "url": "https://api.github.com/repos/mapbender/mapbender-documentation/zipball/803c4858cb956f3a9977b5621a2411afde60b4ce",
+                "reference": "803c4858cb956f3a9977b5621a2411afde60b4ce",
                 "shasum": ""
             },
             "require": {
@@ -2455,7 +2455,7 @@
                 "documentation",
                 "mapbender"
             ],
-            "time": "2016-09-29 10:30:42"
+            "time": "2016-10-05 09:27:30"
         },
         {
             "name": "mapbender/mapbender-icons",
@@ -2510,12 +2510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/search.git",
-                "reference": "b5f8761cb13ebb7b5681dd30e89bd8cb8df17619"
+                "reference": "d6d90f76586354e7cad0e8253cf7cc0477325ba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/search/zipball/b5f8761cb13ebb7b5681dd30e89bd8cb8df17619",
-                "reference": "b5f8761cb13ebb7b5681dd30e89bd8cb8df17619",
+                "url": "https://api.github.com/repos/mapbender/search/zipball/d6d90f76586354e7cad0e8253cf7cc0477325ba6",
+                "reference": "d6d90f76586354e7cad0e8253cf7cc0477325ba6",
                 "shasum": ""
             },
             "require": {
@@ -2546,7 +2546,7 @@
                 "search",
                 "searching"
             ],
-            "time": "2016-09-30 17:16:06"
+            "time": "2016-10-07 07:37:22"
         },
         {
             "name": "medialize/jquery-context-menu",
@@ -3790,16 +3790,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.25.0",
+            "version": "v1.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6"
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f16a634ab08d87e520da5671ec52153d627f10f6",
-                "reference": "f16a634ab08d87e520da5671ec52153d627f10f6",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
+                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
                 "shasum": ""
             },
             "require": {
@@ -3812,7 +3812,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.25-dev"
+                    "dev-master": "1.26-dev"
                 }
             },
             "autoload": {
@@ -3847,7 +3847,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-09-21 23:05:12"
+            "time": "2016-10-05 18:57:41"
         },
         {
             "name": "viscreation/vis-ui.js",
@@ -3855,12 +3855,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eSlider/vis-ui.js.git",
-                "reference": "0e704471f8d5e33b1ae34ac64ada207b366ecf31"
+                "reference": "b93722cd3d30be86194abcbfc5119aeb0405953c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eSlider/vis-ui.js/zipball/0e704471f8d5e33b1ae34ac64ada207b366ecf31",
-                "reference": "0e704471f8d5e33b1ae34ac64ada207b366ecf31",
+                "url": "https://api.github.com/repos/eSlider/vis-ui.js/zipball/b93722cd3d30be86194abcbfc5119aeb0405953c",
+                "reference": "b93722cd3d30be86194abcbfc5119aeb0405953c",
                 "shasum": ""
             },
             "require": {
@@ -3915,7 +3915,7 @@
                 "jquery",
                 "vis-ui"
             ],
-            "time": "2016-09-28 08:35:59"
+            "time": "2016-10-07 07:39:12"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -4325,6 +4325,7 @@
                 "rest",
                 "web service"
             ],
+            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
