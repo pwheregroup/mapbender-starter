@@ -71,7 +71,7 @@
         "mapbender/data-source": "dev-feature/migrate-feature-type as 0.0.1000",
         "mapbender/digitizer": "dev-feature/migrate-feature-type as 1.1.1000",
         "mapbender/configurator": "dev-master as 0.0.1000",
-        "mapbender/search": "style-manager as 0.0.1000",
+        "mapbender/style-manager": "dev-masteras 0.0.1000",
         "mapbender/search": "dev-master as 0.0.1000"
     },
     "scripts": {
