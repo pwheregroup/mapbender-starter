@@ -27,6 +27,7 @@ parameters:
                       tiled: true
                       opacity: 100
           elements:
+
               sidepane:
                   geoSearch:
                     title: 'Objektsuche'
@@ -48,10 +49,11 @@ parameters:
                         - /../vendor/viscreation/vis-ui.js/src/js/elements/data.result-table.js
 
                     # Test template
-                    #css: /../src/Wesseling/StadtBundle/Resources/public/stadt_theme.scss
+                    css: /db_theme.scss
+
                     schemes:
                         pacht:
-                            label: Pachtflächen
+                            label: IPE
                             maxResults: 1000
                             featureType:
                               connection: wesseling
@@ -89,18 +91,18 @@ parameters:
                                 - type: moveFeature
                                 - type: removeSelected
                             popup:
-                                title: Pachtflächen
+                                title: IPE
                                 width: 375px
                             tableFields:
                                 gid:
                                     label: id
                                 paechter_name:
-                                    label: Pächter
+                                    label: Name
                                 bemerkung:
                                     label: Bemerkung
                             formItems:
                                   - type: label
-                                    text: 'Fläche aus ALK übernehmen'
+                                    text: 'Input und select tests'
                                     css: {margin-left: 10px; margin-right: 10px}
                                   - type: fieldSet
                                     children:
@@ -160,7 +162,7 @@ parameters:
                                       title: Bemerkung
                                       name: bemerkung
                         boris_ipe:
-                            label: IPE
+                            label: Baulichen Anlagen
                             maxResults: 1000
                             featureType:
                               connection: immobilien
@@ -196,7 +198,7 @@ parameters:
                                 - type: moveFeature
                                 - type: removeSelected
                             popup:
-                                title: Pachtflächen
+                                title: IPE
                                 width: 375px
                             tableFields:
                                 name:
@@ -265,7 +267,7 @@ parameters:
                                       title: Bemerkung
                                       name: bemerkung
                   digitizer:
-                    title: 'Pachtflächen Beabeitung'
+                    title: 'Digitizer'
                     class: Mapbender\DigitizerBundle\Element\Digitizer
                     target: map
 
@@ -286,8 +288,8 @@ parameters:
                     # Test template
 #                    css: /../src/Wesseling/StadtBundle/Resources/public/stadt_theme.scss
                     schemes:
-                        pacht:
-                            label: Pachtflächen
+                        pacht2:
+                            label: IPE
                             maxResults: 1000
 
                             featureType:
@@ -354,13 +356,13 @@ parameters:
                                 - type: moveFeature
                                 - type: removeSelected
                             popup:
-                                title: Pachtflächen
+                                title: IPE
                                 width: 375px
                             tableFields:
                                 gid:
                                     label: id
                                 paechter_name:
-                                    label: Pächter
+                                    label: Name
                                 bemerkung:
                                     label: Bemerkung
                             formItems:
@@ -397,7 +399,145 @@ parameters:
                                           value: 1
                                       -
                                           type: radio
-                                          title: 'Fläche aus ALK übernehmen'
+                                          title: 'Mehrfach Input Beispiel'
+                                          name: flaeche_aus_alk
+                                          title: Nein
+                                          value: 0
+                                  -
+                                      type: input
+                                      title: 'Name '
+                                      name: paechter_name
+                                      mandatory: true
+                                      mandatorytitle: 'Pflichtfeld - bitte füllen!'
+                                      mandatoryText: 'Bitte geben Sie den Pächternamen an.'
+                                  -
+                                      type: input
+                                      title: Vertragsabschluß
+                                      name: vertragsabschluss
+                                  -
+                                      type: input
+                                      title: Kündigungsfrist
+                                      name: kuendigungsfrist
+                                  -
+                                      type: input
+                                      title: Größe
+                                      name: groesse
+                                  -
+                                      type: textArea
+                                      title: Bemerkung
+                                      name: bemerkung
+                        pacht:
+                            label: EO-Projekt
+                            maxResults: 1000
+
+                            featureType:
+                              connection: wesseling
+                              table: liegenschaften.pacht
+                              uniqueId: gid
+                              geomType: multipolygon
+                              geomField: the_geom
+                              srid: 31466
+                              styleMap:
+                                default:
+                                  borderColor: "#000000 !important"
+
+                              Xevents:
+                                onBeforeSave: |
+                                  $errorMessage = "HEEELLLo";
+
+                            openFormAfterEdit: true
+                            zoomScaleDenominator: 900
+                            allowEditData: true
+                            allowDelete: true
+                            allowDigitize: true
+                            displayPermanent: false
+                            displayOnSelect: true
+                            inlineSearch: true
+                            #useContextMenu: true
+                            searchType: currentExtent
+                            pageLength: 100
+
+                            cClustering:
+                                -
+                                    scale: 10000
+                                    distance: 60
+                                    disable: true
+                                -
+                                    scale: 2500
+                                    distance: 40
+                                    disable: true
+                                -
+                                    scale: 1000
+                                    distance: 20
+                                    disable: true
+                                -
+                                    scale: 500
+                                    distance: 1
+                                    disable: true
+                            styles:
+                                default:
+                                    strokeWidth: 3
+                                    strokeColor: '#ccffcc'
+                                    fillColor: '#ddf3aa'
+                                    fillOpacity: 0
+                                    pointRadius: 10
+                                select:
+                                    strokeWidth: 4
+                                    fillColor: '#FF0000'
+                                    strokeColor: '#FF00FF'
+                                    fillOpacity: 1
+                                    pointRadius: 10
+                            toolset:
+                                - type: drawPolygon
+                                - type: modifyFeature
+                                - type: drawDonut
+                                - type: moveFeature
+                                - type: removeSelected
+                            popup:
+                                title: Pachtflächen
+                                width: 375px
+                            tableFields:
+                                gid:
+                                    label: id
+                                paechter_name:
+                                    label: Name
+                                bemerkung:
+                                    label: Bemerkung
+                            formItems:
+                                  - type: label
+                                    text: 'Inputs tests'
+                                    css: {margin-left: 10px; margin-right: 10px}
+                                  - type: fieldSet
+                                    children:
+                                      - type: select
+                                        options:
+                                          - "test"
+                                          - "asdasd"
+                                        css: {width: 30%}
+                                      - type: select
+                                        options:
+                                          d: "test"
+                                          x: "asdasd"
+                                        css: {width: 30%}
+
+                                      - type: select
+                                        text: Test array sort
+                                        connection: wesseling
+                                        sql: |
+                                          SELECT bilanzkonto, bilanzkonto || ' - ' || produkt || ' (' || bilanzkonto || ')' as produkt
+                                          FROM verkehr.bilanzkonto
+                                          ORDER BY bilanzkonto DESC
+                                        css: {width: 40%}
+
+                                  - type: fieldSet
+                                    children:
+                                      -   type: radio
+                                          name: flaeche_aus_alk
+                                          title: Ja
+                                          value: 1
+                                      -
+                                          type: radio
+                                          title: 'Title test'
                                           name: flaeche_aus_alk
                                           title: Nein
                                           value: 0
@@ -437,3 +577,56 @@ parameters:
                       scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                       maxResolution: auto
                       otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+
+              footer:
+                  activityindicator:
+                      class: Mapbender\CoreBundle\Element\ActivityIndicator
+                      title: activityindicator
+                      activityClass: mb-activity
+                      ajaxActivityClass: mb-activity-ajax
+                      tileActivityClass: mb-activity-tile
+                  coordinates:
+                      class: Mapbender\CoreBundle\Element\CoordinatesDisplay
+                      title: Coordinates Display
+                      tooltip: Coordinates Display
+                      target: map
+                      label: false
+                      empty:  "x: - y: -"
+                      prefix: "x: "
+                      separator:  " y: "
+                  srs:
+                      class: Mapbender\CoreBundle\Element\SrsSelector
+                      title: SRS Selector
+                      tooltip: SRS Selector
+                      label: false
+                      target: map
+                  scaleselector:
+                      class: Mapbender\CoreBundle\Element\ScaleSelector
+                      title: Scale Selector
+                      tooltip: Scale Selector
+                      label: false
+                      target: map
+                  HTML:
+                      title: HTML
+                      class: Mapbender\CoreBundle\Element\HTMLElement
+                      content: |
+                        © Deutsche Bahn AG, DB Immobilien;  © Bahnhofs- und Streckenpläne (Ivl): DB Netz AG, DB-GIS BahnGeodaten;  © GeoBasis-DE / BKG (Hinweis: KEINE PLANERSTELLUNG <br/>
+                        <p>MIT DIGITALEN ORTHOPHOTOS [DOP] AN EXTERNE);
+                        © OpenStreetMap contributors, unter Open Database Licence (www.openstreetmap.org/copyright )
+                      classes: 'html-element-inline db-copyright'
+
+              toolbar:
+                  layertree-button:
+                      title: Layertree
+                      tooltip: Layertree
+                      class: Mapbender\CoreBundle\Element\Button
+                      label: false
+                      icon: icon-layer-tree
+                      target: layertreedialog
+                      action: open
+
+                  HTML:
+                      title: HTML
+                      class: Mapbender\CoreBundle\Element\HTMLElement
+                      content: <img src='../../db_logo.gif'/>
+                      classes: 'html-element-inline db-copyright'
