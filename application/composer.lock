@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29d6d04e1dd8d0b0bae2f4f9ef5c01cb",
-    "content-hash": "7d3b4ae7302a774026be5a14f5f6bfe2",
+    "hash": "916272af26bd814ff1fff7f1d84c847d",
+    "content-hash": "52d60a711903407ffe81836deae41060",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -2510,12 +2510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/search.git",
-                "reference": "d6d90f76586354e7cad0e8253cf7cc0477325ba6"
+                "reference": "08841c48dc3e6d0218555216987959f8ba2ff3f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/search/zipball/d6d90f76586354e7cad0e8253cf7cc0477325ba6",
-                "reference": "d6d90f76586354e7cad0e8253cf7cc0477325ba6",
+                "url": "https://api.github.com/repos/mapbender/search/zipball/08841c48dc3e6d0218555216987959f8ba2ff3f2",
+                "reference": "08841c48dc3e6d0218555216987959f8ba2ff3f2",
                 "shasum": ""
             },
             "require": {
@@ -2546,7 +2546,49 @@
                 "search",
                 "searching"
             ],
-            "time": "2016-10-07 07:37:22"
+            "time": "2016-10-11 10:06:34"
+        },
+        {
+            "name": "mapbender/style-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mapbender/style-manager.git",
+                "reference": "1580dba5c39885ea0b2d0dd6ce68ed1101e2ec7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mapbender/style-manager/zipball/1580dba5c39885ea0b2d0dd6ce68ed1101e2ec7b",
+                "reference": "1580dba5c39885ea0b2d0dd6ce68ed1101e2ec7b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "components/bootstrap": "^3.3",
+                "components/jquery": "1.x",
+                "debugteam/bootstrap-colorpicker": "1.x",
+                "viscreation/vis-ui.js": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mapbender\\StyleManagerBundle\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jochen Schultz",
+                    "email": "jschultz@php.net"
+                }
+            ],
+            "description": "Stylemanager creates stylesets for features and other types of elements",
+            "time": "2016-10-11 09:13:02"
         },
         {
             "name": "medialize/jquery-context-menu",
@@ -5699,6 +5741,12 @@
             "alias": "0.0.1000",
             "alias_normalized": "0.0.1000.0",
             "version": "9999999-dev",
+            "package": "mapbender/style-manager"
+        },
+        {
+            "alias": "0.0.1000",
+            "alias_normalized": "0.0.1000.0",
+            "version": "9999999-dev",
             "package": "mapbender/search"
         }
     ],
@@ -5710,6 +5758,7 @@
         "mapbender/data-source": 20,
         "mapbender/digitizer": 20,
         "mapbender/configurator": 20,
+        "mapbender/style-manager": 20,
         "mapbender/search": 20
     },
     "prefer-stable": false,
