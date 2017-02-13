@@ -3,7 +3,7 @@
     "description": "Mapbender",
     "type": "project",
     "license": "MIT",
-    "version": "3.0.6.0-dev",
+    "version": "3.0.7.0-dev",
     "homepage": "http://www.mapbender.org",
     "support": {
         "email":        "mapbender@osgeo.org",
@@ -66,7 +66,6 @@
         "components/joii": "3.x",
         "mapbender/digitizer": "1.x",
         "setasign/fpdi-fpdf": "1.6.*",
-        "mapbender/documentation": "dev-release/3.0.6",
 
         "components/codemirror": "5.13.x",
         "components/openlayers": "2.13.x",
@@ -74,13 +73,11 @@
         "components/json2": "1.0",
         "components/backbone": "1.3.x",
 
-        "mapbender/mapbender": "dev-release/3.0.6",
+        "mapbender/mapbender": "dev-release/3.0.7",
         "mapbender/mapquery": "dev-master as 1.0.0",
-        "mapbender/fom": "dev-release/3.0.6",
-        "mapbender/owsproxy": "dev-release/3.0.6"
-
-
-
+        "mapbender/fom": "dev-release/3.0.7",
+        "mapbender/owsproxy": "dev-release/3.0.7",
+        "mapbender/documentation": "dev-release/3.0.6"
     },
     "scripts": {
         "post-install-cmd": [
