@@ -6,7 +6,7 @@ language: php
 
 addons:
   apt:
-    packages: [php5, php5-pgsql, php5-gd, php5-curl, php5-cli, php5-sqlite, php5-intl, curl, openssl, sshpass]
+    packages: [php5, php5-xml, php5-mbstring, php5-pgsql, php5-gd, php5-curl, php5-cli, php5-sqlite, php5-intl, sqlite, curl, openssl, sshpass]
 
 cache:
     directories:
@@ -15,10 +15,7 @@ cache:
 sudo: false
 
 php:
-  - 7.0
   - 5.6
-  - 5.5
-  - 5.3
 
 before_script:
   - if (test $TRAVIS_PULL_REQUEST = false) then git checkout $TRAVIS_BRANCH; fi
