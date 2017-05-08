@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "232c6eb1d14a3e5cf63e69e07921a2e2",
+    "content-hash": "6d84c958c306efd2d63d2688cce72193",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -2411,6 +2411,51 @@
                 "owsproxy"
             ],
             "time": "2017-05-05 11:25:58"
+        },
+        {
+            "name": "mapbender/routing",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mapbender/routing.git",
+                "reference": "3325def39a76814602e46608d287bb7aa8ca67d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mapbender/routing/zipball/3325def39a76814602e46608d287bb7aa8ca67d9",
+                "reference": "3325def39a76814602e46608d287bb7aa8ca67d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mapbender\\RoutingBundle\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andriy Oblivantsev",
+                    "email": "andriy.oblivantsev@wheregroup.com"
+                },
+                {
+                    "name": "David Patzke",
+                    "email": "david.patzke@wheregroup.com"
+                }
+            ],
+            "description": "Mapbender routing",
+            "keywords": [
+                "gis",
+                "mapbender",
+                "routing"
+            ],
+            "time": "2017-05-08 13:31:04"
         },
         {
             "name": "medialize/jquery-context-menu",
@@ -6397,7 +6442,8 @@
         "mapbender/fom": 20,
         "mapbender/mapbender": 20,
         "mapbender/owsproxy": 20,
-        "mapbender/documentation": 20
+        "mapbender/documentation": 20,
+        "mapbender/routing": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
