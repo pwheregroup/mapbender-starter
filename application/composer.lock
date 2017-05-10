@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "24356f304d3d124f5202d1f6130bd694",
+    "content-hash": "0763e2c48beaa011db62f70463803e9d",
     "packages": [
         {
             "name": "afarkas/html5shiv",
@@ -1857,16 +1857,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "1.6.2",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "b8683d206e7297f54034f67a877f966c14dc12ea"
+                "reference": "b5abc84a55d7c7203561b3fd9049acd6859a5b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/b8683d206e7297f54034f67a877f966c14dc12ea",
-                "reference": "b8683d206e7297f54034f67a877f966c14dc12ea",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/b5abc84a55d7c7203561b3fd9049acd6859a5b62",
+                "reference": "b5abc84a55d7c7203561b3fd9049acd6859a5b62",
                 "shasum": ""
             },
             "require": {
@@ -1905,7 +1905,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -1932,7 +1932,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2017-04-17T15:27:46+00:00"
+            "time": "2017-05-10T09:43:46+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2108,16 +2108,16 @@
         },
         {
             "name": "mapbender/digitizer",
-            "version": "dev-master",
+            "version": "dev-feature/multi-select",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender-digitizer.git",
-                "reference": "3c488c8087f603654cb26e81142df5a3f61eaf54"
+                "reference": "72868daf8016b031871730ec6ac2982625a6c128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender-digitizer/zipball/3c488c8087f603654cb26e81142df5a3f61eaf54",
-                "reference": "3c488c8087f603654cb26e81142df5a3f61eaf54",
+                "url": "https://api.github.com/repos/mapbender/mapbender-digitizer/zipball/72868daf8016b031871730ec6ac2982625a6c128",
+                "reference": "72868daf8016b031871730ec6ac2982625a6c128",
                 "shasum": ""
             },
             "require": {
@@ -2156,7 +2156,7 @@
                 "digitizing",
                 "mapbender"
             ],
-            "time": "2017-05-02 10:21:57"
+            "time": "2017-05-05 11:34:48"
         },
         {
             "name": "mapbender/documentation",
@@ -2164,12 +2164,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender-documentation.git",
-                "reference": "b7d62256d66c35573e86de0c2e59cefc54eb6e51"
+                "reference": "7658ee8618c09cee1732e3559165fc5dbfafe596"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender-documentation/zipball/b7d62256d66c35573e86de0c2e59cefc54eb6e51",
-                "reference": "b7d62256d66c35573e86de0c2e59cefc54eb6e51",
+                "url": "https://api.github.com/repos/mapbender/mapbender-documentation/zipball/7658ee8618c09cee1732e3559165fc5dbfafe596",
+                "reference": "7658ee8618c09cee1732e3559165fc5dbfafe596",
                 "shasum": ""
             },
             "require": {
@@ -2191,7 +2191,7 @@
                 "documentation",
                 "mapbender"
             ],
-            "time": "2017-05-02 12:39:23"
+            "time": "2017-05-05 14:09:37"
         },
         {
             "name": "mapbender/fom",
@@ -2199,12 +2199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/fom.git",
-                "reference": "7dba3eda4a186018ed96bda474be400bc64cb57a"
+                "reference": "2e60279acbb3eda465ab738c505bfe4ed11c8699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/fom/zipball/7dba3eda4a186018ed96bda474be400bc64cb57a",
-                "reference": "7dba3eda4a186018ed96bda474be400bc64cb57a",
+                "url": "https://api.github.com/repos/mapbender/fom/zipball/2e60279acbb3eda465ab738c505bfe4ed11c8699",
+                "reference": "2e60279acbb3eda465ab738c505bfe4ed11c8699",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2226,7 @@
                 "mapbender",
                 "module"
             ],
-            "time": "2017-05-02 09:32:17"
+            "time": "2017-05-05 11:25:42"
         },
         {
             "name": "mapbender/mapbender",
@@ -2234,12 +2234,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/mapbender.git",
-                "reference": "bd92892713383d595ed2325531212161d6386894"
+                "reference": "e9674e46ffbce32cf00fee1d42c5c7cc436e71c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/mapbender/zipball/bd92892713383d595ed2325531212161d6386894",
-                "reference": "bd92892713383d595ed2325531212161d6386894",
+                "url": "https://api.github.com/repos/mapbender/mapbender/zipball/e9674e46ffbce32cf00fee1d42c5c7cc436e71c7",
+                "reference": "e9674e46ffbce32cf00fee1d42c5c7cc436e71c7",
                 "shasum": ""
             },
             "require": {
@@ -2272,7 +2272,7 @@
                 "mapbender",
                 "module"
             ],
-            "time": "2017-05-02 09:31:27"
+            "time": "2017-05-05 11:25:24"
         },
         {
             "name": "mapbender/mapbender-icons",
@@ -2381,12 +2381,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mapbender/owsproxy3.git",
-                "reference": "989c084fa30f56749e59dc361869c3d39c8ed83a"
+                "reference": "528a72ca387ad5c303043322157615ada5a8efc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mapbender/owsproxy3/zipball/989c084fa30f56749e59dc361869c3d39c8ed83a",
-                "reference": "989c084fa30f56749e59dc361869c3d39c8ed83a",
+                "url": "https://api.github.com/repos/mapbender/owsproxy3/zipball/528a72ca387ad5c303043322157615ada5a8efc4",
+                "reference": "528a72ca387ad5c303043322157615ada5a8efc4",
                 "shasum": ""
             },
             "require": {
@@ -2410,7 +2410,7 @@
                 "module",
                 "owsproxy"
             ],
-            "time": "2017-05-02 09:31:49"
+            "time": "2017-05-10 07:59:10"
         },
         {
             "name": "medialize/jquery-context-menu",
@@ -2918,6 +2918,47 @@
             "time": "2014-02-14T20:48:52+00:00"
         },
         {
+            "name": "select2/select2",
+            "version": "4.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/select2/select2.git",
+                "reference": "566c7846fbf8c3b7674346f26d0ee872c0a77629"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/select2/select2/zipball/566c7846fbf8c3b7674346f26d0ee872c0a77629",
+                "reference": "566c7846fbf8c3b7674346f26d0ee872c0a77629",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "dist/js/select2.js"
+                    ],
+                    "styles": [
+                        "dist/css/select2.css"
+                    ],
+                    "files": [
+                        "dist/js/select2.js",
+                        "dist/js/i18n/*.js",
+                        "dist/css/select2.css"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Select2 is a jQuery based replacement for select boxes.",
+            "homepage": "https://select2.github.io/",
+            "time": "2016-05-27T01:16:06+00:00"
+        },
+        {
             "name": "sensio/distribution-bundle",
             "version": "v4.0.38",
             "target-dir": "Sensio/Bundle/DistributionBundle",
@@ -3275,16 +3316,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/9a06dc570a0367850280eefd3f1dc2da45aef517",
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517",
                 "shasum": ""
             },
             "require": {
@@ -3325,7 +3366,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-04-20T17:32:18+00:00"
+            "time": "2017-05-01T15:54:03+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -4277,16 +4318,16 @@
         },
         {
             "name": "viscreation/vis-ui.js",
-            "version": "dev-master",
+            "version": "dev-feauture/multi-select",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eSlider/vis-ui.js.git",
-                "reference": "2410b0b563011908d7b44d99e1d38a0ba2192273"
+                "reference": "4549e05528db23c0643084022d7ec310cbb98f5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eSlider/vis-ui.js/zipball/2410b0b563011908d7b44d99e1d38a0ba2192273",
-                "reference": "2410b0b563011908d7b44d99e1d38a0ba2192273",
+                "url": "https://api.github.com/repos/eSlider/vis-ui.js/zipball/4549e05528db23c0643084022d7ec310cbb98f5c",
+                "reference": "4549e05528db23c0643084022d7ec310cbb98f5c",
                 "shasum": ""
             },
             "require": {
@@ -4301,6 +4342,7 @@
                 "medialize/jquery-context-menu": "1.*",
                 "robloach/component-installer": "0.2.*",
                 "rogeriopradoj/respond": "1.4.*",
+                "select2/select2": "^4.0",
                 "wheregroup/jquerydialogextendjs": "2.x"
             },
             "require-dev": {
@@ -4341,7 +4383,7 @@
                 "jquery",
                 "vis-ui"
             ],
-            "time": "2017-05-02 10:24:24"
+            "time": "2017-05-05 11:31:13"
         },
         {
             "name": "wheregroup/codemirror",
@@ -6395,13 +6437,13 @@
         {
             "alias": "1.2.0",
             "alias_normalized": "1.2.0.0",
-            "version": "9999999-dev",
+            "version": "dev-feature/multi-select",
             "package": "mapbender/digitizer"
         },
         {
-            "alias": "0.2.0",
-            "alias_normalized": "0.2.0.0",
-            "version": "9999999-dev",
+            "alias": "0.0.100",
+            "alias_normalized": "0.0.100.0",
+            "version": "dev-feauture/multi-select",
             "package": "viscreation/vis-ui.js"
         },
         {
