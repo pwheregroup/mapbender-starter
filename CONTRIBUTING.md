@@ -1,10 +1,10 @@
 # Developer Guide
 
-Mapbender welcomes contributions from all members, so you are welcome to join us in the development!
+The Mapbender team welcomes contributions from all members - so you are welcome to join us in the development!
 
 Third-party patches are essential for the preservation of high standards in [Mapbender].
 
-We simply can't access the huge number of platforms and myriad configurations for running [Mapbender]. 
+We simply cannot access the huge number of platforms and myriad configurations for running [Mapbender]. 
 
 We want it as easy as possible to carry out changes to get the [modules] in your environment to run. 
 
@@ -12,19 +12,46 @@ There are a few [guidelines][rules] that we need contributors to follow so that 
 
 # Architecture 
 
-Mapbender is based on [Symfony framework] and uses [composer] to manage external and intenal libraries as own [modules][module].
+Mapbender is based on a [Symfony framework] and uses [composer] to manage external and internal libraries as own [modules][module].
 
-# Installation  
+# Installation      
 
-You can find the complete installation description [here](http://doc.mapbender3.org/en/book/installation/installation_git.html):
 
-Here is a quick installation guide to get [git]-based "developer edition" of [Mapbender]:
+## Preparing system
 
-## Clone the project 
+To get started with the development you will need PHP interpreter and some additional libraries.
+  
+### Preparing Ubuntu 16.04 
+
+```sh
+sudo apt-get install php7.0 php7.0-xml php7.0-mbstring php7.0-pgsql php7.0-gd php7.0-curl php7.0-cli php7.0-sqlite php7.0-intl php7.0-json sqlite curl openssl
+```
+
+### Preparing Ubuntu 14.04 
+
+Activate universe repoisitory:
+
+```sh
+sudo add-apt-repository universe
+```
+
+Update package list:
+
+```sh
+sudo apt-get update
+```
+
+Install php interpreter and modules:
+
+```sh
+sudo apt-get install php5 php5-xml php5-mbstring php5-pgsql php5-gd php5-curl php5-cli php5-sqlite php5-intl sqlite curl openssl
+```
+
+## Cloning project source
 
 ### via SSH
 ```sh
-git clone git@github.com:mapbender/mapbender-starter.git 
+git clone git@github.com:mapbender/mapbender-starter.git mapbender-starter
 ```
 
 or 
@@ -32,33 +59,50 @@ or
 ### via HTTP
 
 ```sh
-git clone https://github.com/mapbender/mapbender-starter.git
+git clone https://github.com/mapbender/mapbender-starter.git mapbender-starter
 ```
-### Bootstrap
+
+## Switch to project directory
+```sh
+cd mapbender-starter
+```
+
+## Run bootstrap script 
+
+Running the bootstrap script takes some time to get the required libraries and to prepare the project configurations. Bootstrap saves [Mapbender] starter configurations in a `application/app/db/demo.sqlite` configuration file. After that, a SQLite testing database is created. In the end, the script starts an integrated webserver in your terminal. For more on that, check [start webserver]. Symfony configurations are located under `application/app/config`. 
+
 
 ```sh
-./bootstrap
+sh bootstrap
 ```
 
-## Start php-server
+
+## Start web-server
 ```sh
 app/console server:run
 ```
 
-The next console message describes how you can view mapbender in your browser.
-
-It looks something like this:
+After executing the command run, your console describes how you can view web application in your browser:
 ```sh 
 Server running on http://localhost:8000
 ```
 
-So now open the URL in your favorite browser. 
+Open the displayed URL from your console output message in your favorite browser. 
 
-For development reason it is recommended to use Chromium(Chrome) or Firefox.
+For development reasons, it is recommended to use Chromium (Chrome) or Firefox.
+
+If you want to log in, you have to use the standard combination (name: root / pw: root). Please change these patterns if you want a secure access.
+
+To stop the server from running, just press ctrl-C or close your console.
+
+That's it! 
+
+*The developer installation is only useful for solo development purposes and should be optimized for production or co-working systems.*
+
 
 # Modules
 
-Module is a new part of mapbender concept, based on [Symfony modularity rules](http://www.symfony.com) 
+Module is a new part of the [Mapbender] concept, based on [Symfony modularity rules](http://www.symfony.com) 
 and [composer] dependency manager. 
 
 Special builds can be created that exclude subsets of Mapbender functionality. 
@@ -66,18 +110,18 @@ Special builds can be created that exclude subsets of Mapbender functionality.
 This allows smaller custom builds when the builder is certain 
 that those parts of Mapbender are not being used. 
 
-For example, an application that only use map view and did not need [Digitizer] functionality.
+For example, it is possible to create an application which only uses map view and did not need [Digitizer] functionality.
 
-In the future release any module may be excluded except for the core. 
+Future [Mapbender] releases may be able to exclude any additional modules apart from the core application. 
 
-In the past the development bundles were part of the git [submodules]. 
+In the past, the development bundles were part of the git [submodules]. 
 
-Now the days each module should be an own git repository 
+Today, each module should be in its own git repository 
 and reuse the same directory structure. 
 
 ## Rules
 
-It's __important__ to follow the rules:
+It's __very important__ to follow enclosed rules:
 
 Each module is:
 
@@ -93,24 +137,24 @@ Each module should have:
 * identical structure
 * own [license] file
 * own function description [README] file
-* own [CONTRIBUTING].md describes how other developers should install, setup and contribute in it
+* own [CONTRIBUTING].md that describes how other developers should install, setup and contribute in it
 * own [tests] relevant to new [features], [elements] or functionality
 
-Write your code in PSR-2 coding [style guide] standard. 
+Write your code using PSR-2, a coding [style guide] standard. 
 
 # Bundles 
 
-Bundle is a set of functionality, synonym to library, which can be created and used outside of the Mapbender.
-The goal of the Bundle is to restrict usage of global name space and switch or swap extend separated functionality.
+A bundle is a set of functionality (similar to a library) which can be created and used outside of the [Mapbender].
+The goal of the Bundle is to restrict the usage of global name spaces and optionally switch, swap and extend the [Mapbender] functionality.
 
 ## Bundle structure
  
-Is a special set of folders and files:
+A Bundle contains a special set of folders and files:
 
 * **Command/** - Contains commands. Read more about commands [here] (http://symfony.com/doc/current/components/console/introduction.html#creating-a-basic-command)  
 * **Controllers/** - Contains _controllers_ in other words public [API]'s. 
 * **Component/** - Contains _components_ in other words _services_, 
-    this contains buisness logic in classes. The _components_ are used by controllers or other components.
+    this contains business logic in classes. The _components_ are used by controllers or other components.
 * **DataFixtures/** - Fixtures are used to load a controlled set of data into a database. This data can be used for testing or could be the initial data required for the application to run smoothly.
 * **DependencyInjection/** - Contains only one file, this makes [components] in _magical_ way available as [services], 
     if they are _registred_ in _Resources/config/services.xml_ [bundle] folder.
@@ -130,7 +174,7 @@ Is a special set of folders and files:
 * **LICENSE**  - Contains [LICENSE] text.
 * **README.md** - Contains [README] text.
 * **CONTRIBUTING.md** - Contains [CONTRIBUTING] text.
-* **MapbenderNameBundle.php** - Contains the Bundle [elements], [templates],  [manager controllers] and [layers] register.
+* **MapbenderNameBundle.php** - Bundle description file, this registers and makes available bundle [elements], [templates],  [manager controllers] and [layers] register.
 
 Read more about best practices for reusable [bundles] [here](http://symfony.com/doc/2.3/cookbook/bundles/best_practices.html).
 
@@ -148,18 +192,42 @@ git init
 
 In order to create a [bundle], please take a look at the [bundle structure](#Bundle%20structure). 
 
-**Don't forget to follow the [module] [rules]**!
+**Don't forget to follow [module] [rules]**!
+
+
+### Create bundle description class
+
+Bundles can contains [Templates], [Elements], [Roles], administration manager menu items or ACL classes. 
+Bundle class file describes which Templates, Elements or ACL classes are delivered and available for the bundle.
+The name of bundle description  file should contain full name of bundle and class name like this: `MapbenderMapbenderNameBundle.php`
+
+Description class should extend the *MapbenderBundle* class
+
+
+#### Register bundle components
+
+Methods available to rewrite from *MapbenderBundle*:
+
+* *getElements* - Should return a list of element classes provided by the bundle. Each entry in the array should have a fully qualified class name.  See [source](https://github.com/mapbender/mapbender/blob/release/3.0.6/src/Mapbender/CoreBundle/MapbenderCoreBundle.php#L33) for an example.
+* *getTemplates* - List of template classes provided by bundle. Each entry in the array is a fully qualified class name.  See [source](https://github.com/mapbender/mapbender/blob/release/3.0.6/src/Mapbender/ManagerBundle/MapbenderManagerBundle.php#L33) for an example. 
+* *getManagerControllers* - List of controllers to be embedded into administration manager interface. The list must be an array of arrays, each giving the integer weight, name, route and array of route prefixes to match against. See [source](https://github.com/mapbender/mapbender/blob/release/3.0.6/src/Mapbender/ManagerBundle/MapbenderManagerBundle.php#L11) for an example. 
+* *getACLClasses* - List ACL bundle classes. See [source](https://github.com/mapbender/mapbender/blob/release/3.0.6/src/Mapbender/CoreBundle/MapbenderCoreBundle.php#L82) for an example.
+* *getRoles* - List bundle roles. The list must be an array with   
+    * name: String, must start with ROLE_, e.g. ROLE_USER_ADMIN
+    * title: String, human readable, e.g. "Can administrate users"
+    * @return array roles. See [source](https://github.com/mapbender/mapbender/blob/release/3.0.6/src/Mapbender/ManagerBundle/MapbenderManagerBundle.php#L64) example.
+    
 
 ### Create composer package
 
 Create a [composer].json as described in the example.
 
 Dont forget to fill it up:
-* **authors** - Is required in order to know the technical director of the [modules ]. 
+* **authors** - Is required in order to know the technical director of the [modules]. 
 * **name** - Unique name of the [module]. You can check the existens by [composer packagist](https://packagist.org/) service. 
 * **license** - [license] short name.
 * **description** - Describes the [module].
-* **autoload** - [psr-0] Path to the namespace classes to load them correctly.
+* **autoload** - [psr-4] Path to the namespace classes to load them correctly.
 * **target-dir** - Path where [bundle] root should be placed in.
 
 Better if **autoload** and **target-dir** will be copied from example as is, so only [bundle] names should be changed.
@@ -168,7 +236,7 @@ Better if **autoload** and **target-dir** will be copied from example as is, so 
 {
     "name": "mapbender/new-awesome-bundle",
     "description": "New awesome bundle description",
-    "keywords": ["mapbender", "awesome","geo"],
+    "keywords": ["mapbender","awesome","geo"],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -176,9 +244,10 @@ Better if **autoload** and **target-dir** will be copied from example as is, so 
     ],
     "require": {
         "php": ">=5.3.3",
+        "imag/ldap": "2.x"
     },
     "autoload": {
-		"psr-0": {"Mapbender\\NewAwesomeBundle": "."}
+		"psr-4": {"Mapbender\\NewAwesomeBundle": "."}
     },
     "target-dir": "Mapbender/NewAwesomeBundle",
     "extra": {
@@ -189,6 +258,7 @@ Better if **autoload** and **target-dir** will be copied from example as is, so 
 }
 ```
 
+More about composer definition [here](https://getcomposer.org/doc/04-schema.md).
 
 ### Save bundle 
 
@@ -276,35 +346,27 @@ This workflow is deprecated.
 
 This approach has been used a long time to develop and distribute [Mapbender], 
 but due to the course complexity and many changes in diverse [bundles], located in different sub-modules, 
-without [versioning], it was decided to change the development workflow to [composer] packages named as [modules].
+without [versioning], we decided to change the development workflow to [composer] packages named as [modules].
 
 
-## Definition
-
-[Submodule] - is git repository, which is linked to primary [mapbender-starter](https://github.com/mapbender/mapbender-starter) repository.
-
-## Description
-
-For now there are three submodules: [Mapbender], [FOM] and [OWS Proxy], located in the ```application``` folder.
-Each [submodule] contains one or more bundles. 
 
 # Elements
 
 ## Definition
 
-The Elements can be a part of each [bundle] and should be stored under *SomeBundle/SomeElementName* folder.
+Mapbender elements are an optional part of each [bundle] and should be stored under *SomeBundle/SomeElementName* folder.
 
 
 Each Mapbender element is:
 
-* central part of Mapbender configurable functionality
+* A central part of Mapbenders configurable functionality
 * [Symfony] controller([API]) 
 * [jQuery] [widget]
 * Part of [bundle]
 * Child of [Element] class
 
 
-Each Mapbender element has it's own:
+Each Mapbender element has its own:
 
 * JavaScript front end [jQuery] [widget]
 * HTML [DOM] element
@@ -340,7 +402,7 @@ class MapbenderDigitizerBundle extends MapbenderBundle
     public function getElements()
     {
         return array(
-            'Mapbender\DigitizerBundle\Element\MyNeElement'
+            'Mapbender\DigitizerBundle\Element\MyNewElement'
         );
     }
 }
@@ -349,11 +411,11 @@ class MapbenderDigitizerBundle extends MapbenderBundle
 
 # Templates
 
-* **Fullscreen** - is the main template. This should be used for desktop 
+* **Fullscreen** - is the main template. This should be used for a desktop 
 based application.
 
-* **Mabender mobile template** - is the current mobile template. This is in development
-and can be used for simple task. Use it at your own risk.
+* **Mapbender mobile template** - is the current mobile template. This is in development
+and can be used for simple tasks. Use it at your own risk.
 
 * **Classic template** - is deprecated. This template shouldn't be used. The only reason why it's still in the list is for 
 backwards capability of Mapbender 3.0.x based projects.
@@ -364,7 +426,7 @@ playground for future development and for new templates. Use it at your own risk
 
 ## Styling
 
-Application template styling can be done by using [CSS] tab for adding your own style sheets.
+Application template styling can be done by using the [CSS] tab in the backend for adding your own style sheets.
 
 [CSS]/[SCSS] text will be parsed to use on top of the application it's stored for.
 
@@ -372,8 +434,10 @@ Application template styling can be done by using [CSS] tab for adding your own 
 
 A template is a part of the [bundle]. It's located in the  "Templates/" directory. 
 
-* create new template PHP-Class in "Template" directory
-* base the class by "apbender\CoreBundle\Component\Template"
+* Create new template PHP-Class in "Template" directory
+* Extend Mapbender template by: 
+    * "Mapbender/CoreBundle/Component/Fullscreen" for desktop application
+    * "Mapbender/MobileBundle/Template/Mobile" for mobile application
 
 Example:
 
@@ -388,7 +452,7 @@ class NewTemplate extends Mapbender\CoreBundle\Component\Template{
 ```php
     public function getTemplates()
     {
-        return array('Mapbender\AcmeBundle\Template\NewTemplate',);
+        return array('Mapbender\AcmeBundle\Template\NewTemplate');
     }
 ```
 
@@ -413,9 +477,9 @@ To get unique named translations, use a bundle name prefix before subject.
 
 ## Generate translations
 
-By using [TWIG] files, there is a generator, to put any used [translation] automatically in 'xlf' files.
+By using [TWIG] files, a implemented generator can transform any used [translation] automatically in 'xlf' files.
 
-There few parameters to be submitted:
+Therefore, these few parameters must be submitted:
 
 * **--output-format=** - Format of generated translation file. It's important to use [xlf]. 
 * **--force** - Force append new translations to existing translation files
@@ -428,9 +492,6 @@ There few parameters to be submitted:
 app/console translation:update --output-format=xlf --force de MapbenderCoreBundle
 ```
 
-
-# Branches
-In order to change the [submodule] source code it is important to create a new [branch]. 
 
 ## Feature branch
 
@@ -456,7 +517,7 @@ git commit -m "Add some new stuff"
 
 ```sh
 git fetch -a
-git merge "release/3.0.5"
+git merge "release/3.0.6"
 ``` 
 * If conflicts arise, resolve [them][Resolve git conflicts]
 * Run tests
@@ -492,7 +553,7 @@ git commit -m "Fix bug description"
 
 ```sh
 git fetch -a
-git merge "release/3.0.5"
+git merge "release/3.0.6"
 ``` 
 * If conflicts arise, resolve [them][Resolve git conflicts]
 * Run or add new tests relevant to the fixed bug 
@@ -516,7 +577,7 @@ Example:
 
 ```sh
 cd mapbender
-git checkout "release/3.0.5"
+git checkout "release/3.0.6"
 ``` 
 * Fetch changes  
 
@@ -549,7 +610,8 @@ git push
 # Tests
 
 Don't forget to write tests!
-Write a good commit message.
+Moreover, please write a clear commit message.
+Here are some good explanations:
 
 ## Examples
 
@@ -571,15 +633,12 @@ bin/phpunit -c app vendor/mapbender/digitizer/Mapbender/DigitizerBundle/Tests/Fe
 
 # Resources
 
-## Submodules
-
-* [Mapbender] - Contains Core, Manager and Print [bundles].
-* [FOM] - **F**riends **o**f **M**apbender [submodule] contains some additional [bundles].
-* [OWS Proxy] - OWS Proxy bundle.
-
 ## Modules
 
-* [Digitizer] - Digitalizing [bundle], which contains geometries [services].
+* [Mapbender] - Contains Core, Manager, Print, Mobile and some other [bundles] this will be extracted as [modules] in next releases.
+* [FOM] - **F**riends **o**f **M**apbender contains Administration and Security components [bundles]. The module is deprecated and will be split in new modules as optional parts of Mapbender3.
+* [OWS Proxy] - Secure communicate remote hosts through Mapbender3 backend.
+* [Digitizer] - Digitalizing [bundle], which contains geometry [services].
 * [DataStore] - DataStore [bundle], which contains data drivers and [services].
 
 ## Libraries
@@ -596,16 +655,18 @@ bin/phpunit -c app vendor/mapbender/digitizer/Mapbender/DigitizerBundle/Tests/Fe
 [tests]: #tests "Tests"
 [features]: #features
 [feature]: #features
-[elements]: #element
-[element]: #element
+[elements]: #elements
+[element]: #elements
 [templates]: #templates
 [template]: #templates
 [translation]: #translations
 [translations]: #translations
 [modules]: #modules
 [module]: #modules
+[submodules]: #submodules "Git submodules"
 [manager controllers]: #manager-controllers 
 [layers]: #layers
+[start webserver]: #start-web-server "Start webserver"
 [services]: http://symfony.com/doc/2.3/book/service_container.html "Symfony Services"
 [components]: http://symfony.com/doc/current/components/index.html
 [style guide]: http://www.php-fig.org/psr/psr-2/
@@ -628,9 +689,9 @@ bin/phpunit -c app vendor/mapbender/digitizer/Mapbender/DigitizerBundle/Tests/Fe
 [CSS]: http://www.w3schools.com/css/css_intro.asp "CSS"
 [TWIG]: http://twig.sensiolabs.org/ "TWIG"
 [parameters.yml]: http://symfony.com/doc/current/best_practices/configuration.html "Symfony configuratioN"
-[pull-request]: https://help.github.com/send-pull-requests "Pull requests"
-[Resolve git conflicts]: https://github.com/conflicts/resolve "Resolve git conflicts"
-[branch]: https://help.github.com/branch "Branching"
+[pull-request]: https://help.github.com/articles/creating-a-pull-request/ "Pull requests"
+[Resolve git conflicts]: https://help.github.com/articles/resolving-a-merge-conflict-on-github/ "Resolve git conflicts"
+[branch]: https://help.github.com/articles/about-branches/ "Branching"
 [submodule]: https://git-scm.com/book/en/v2/Git-Tools-Submodules  "Git submodule"
 [Mapbender]: https://mapbender3.org/  "Mapbender3"
 [FOM]: https://github.com/mapbender/fom  "FOM submodule"

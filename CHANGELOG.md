@@ -1,6 +1,150 @@
 # Changelog
 
-## v3.0.5.4 - 2016-09-xx
+## v.3.0.6.3 - 2017-07-27
+ - Fixed regression for for WMS 1.3.0 support (#529)
+ - Fixed regression for WMS Scale hint (#584)
+
+
+## v3.0.6.2 - 2017-07-20
+- [Mapbender Starter](https://github.com/mapbender/mapbender-starter/commits/release/3.0.6)
+- [Mapbender Core](https://github.com/mapbender/mapbender/commits/release/3.0.6)
+- [FOM](https://github.com/mapbender/fom/commits/release/3.0.6)
+- [OWS Proxy](https://github.com/mapbender/owsproxy3/commits/release/3.0.6)
+- Fix create legend URL
+- Reverse to old getScaleRecursive-function in WmsLayerSource Closes: https://github.com/mapbender/mapbender/issues/565
+- Fix layer instance administration form sizes Closes: https://github.com/mapbender/mapbender/issues/559
+- Update compsoser libraries Fixes: #563
+- Merge pull request #52 from mapbender/wirkus-patch-1
+- Merge pull request #54 from mapbender/hotfix/map-srs
+- map-srs 900913 to 3857
+- Update composer libraries. Fixes: https://github.com/mapbender/mapbender/issues/543, https://github.com/mapbender/mapbender/issues/530
+- Describe how-to activate universe package on ubuntu 14.04
+- Fix create legend URL
+- Merge pull request #572 from mapbender/fix/wrong-scaleHint-in-sublayers
+- Fix layer instance administration form sizes Closes: #559
+- Merge pull request #545 from mapbender/hotfix/imagepathCommand-530
+- Merge pull request #553 from mapbender/hotfix/featureinfo-print-trans-button
+- Add output for better UX
+- Revert commit d11dd2fd1bde139225a388ddb6d125cb24562260
+- Merge pull request #570 from mapbender/fix/ruler-unmatching-value-app-backend
+- Reverse to old getScaleRecursive-function in WmsLayerSource because of regression bug. Now correct scale and scale hint for sublayer are set
+- Change default value for immediate messurment to null and add check if value is set
+- Merge pull request #563 from mapbender/hotfix/epsg-code-list
+- added EPSG:4839 and EPSG:5243 to the list
+- changed trans variable for print button mb.core.featureinfo.popup.btn.print
+- changed trans variable for print button mb.core.featureinfo.error.noresult
+- Fix FeatureInfo print translations
+- Fix initialize search router Closes: #543
+- Added Command to update old imagepath of map element / Fix OpenLayers2 image path #530
+- Merge pull request #551 from mapbender/fix/search-router-autoclose-after-click
+- remove 'move' check on click event
+- Add spaces behind foreach and if to satisfy code quality standards
+- Remove unused element generator code. Add documentation
+- Added reverse axis default for EPSG:31466
+
+## v3.0.6.1
+     - [Mapbender Starter](https://github.com/mapbender/mapbender-starter/commits/release/3.0.6)
+     - [Mapbender Core](https://github.com/mapbender/mapbender/commits/release/3.0.6)
+     - [FOM](https://github.com/mapbender/fom/commits/release/3.0.6)
+     - [OWS Proxy](https://github.com/mapbender/owsproxy3/commits/release/3.0.6)
+     - Update composer.lock for next bugfix release.
+     - Fix a css problem with checkboxes; Fix print scaling
+     - Fix typo
+     - Let config.php by distributing or build a package
+     - Fix composer PSR 4 auto loading
+     - Fix symfony cookies reference URL
+     - Fix clean modal SCSS file
+     - Update composer libraries for 3.0.6.0
+     - Update Date in Changelog.md
+     - Add "app_dev.php" file for distribution
+     - Rename composer rebuild database command
+     - Disable generate API documentation generation report
+     - Fix and add application by render elements
+     - Add WmcEditor Default Parameters for width and height
+     - Fix parse dimenstion data
+     - Fix vendor specific parameter close button position
+     - Add missed VendorSpecific origextentextent property
+     - Fix build package name
+     - Fix save MetadataUrl as doctine array type
+     - Set doctrine version to 1.x
+     - Fix save Style, VendorSpecific and WmsLayerSource entities
+     - Fix retrive composer build options
+     - Add twitter link
+
+
+## v3.0.6.0
+
+- [Mapbender Starter](https://github.com/mapbender/mapbender-starter/commits/release/3.0.6)
+- [Mapbender Core](https://github.com/mapbender/mapbender/commits/release/3.0.6)
+- [FOM](https://github.com/mapbender/fom/commits/release/3.0.6)
+- [OWS Proxy](https://github.com/mapbender/owsproxy3/commits/release/3.0.6)
+
+    
+## v3.0.6.0 - 2017-05-05
+    - Fix transalate element titles by import Closes: #46
+    - Fix import applications Closes: #45, #47
+    - Add php 'mbstring' and 'xml' extensions requirement
+    - Fix getting new application entity by slug from database Closes: #43
+    - Fix virtual composer repositories and set vendor to WhereGroup:
+    - Fix boot strap script installing assets
+    - Fix detect operation system and install assets after composer install/update
+    - Update to symfony 2.8
+    - Set composer library binaries as executable after update or install
+    - Split mapbender source and data manager as separate modules
+    - Deactivate WMS only valid option by default
+    - Fix WmsLayerSource getScaleRecursive method and add annotations
+    - Set "robloach/component-installer" library to  "0.x" version
+    - Let bootstrap script start web server instance
+    - Updating  composer to version 1.4.1 (stable)
+    - FIx composer placeholder dependecies
+    - Add own "components/placeholdersjs" library repository
+    - Fix options variable link in copyright element
+    - Add composer log and distribute commands
+    - Remove redudant LICENSE file
+    - Improve composer build command and rename from build-zip to build. Command options: [zip|tar.gz] [name] [version]
+    - composer in bin directory
+    - deprecated and unneccessary commands removed from build.xml
+    - Add composer archive definition
+    - Fix check install assets if new installation
+    - Add same LICENSE from root directory to application
+    - Add composer "init-example", "install-hard-copy-assets" and "install-sym-link-assets" commands
+    - Fix boot strap script for development purposes
+    - Remove php-5 installing from bootstrap
+    - PSR-2 typo
+    - Remove old git installation link
+    - Remove JMS security configuraiton and bundles
+    - Remove  "jms/security-extra-bundle",  "jms/di-extra-bundle" and "jms/serializer"
+    - Remove "kriswallsmith/buzz"composer library (moved as part of owsproxy)
+    - Merge update a4landscape.odg print template https://github.com/mapbender/mapbender/pull/486
+    - Merge feature/printClient-legendpage-image https://github.com/mapbender/mapbender/pull/486
+    - new image for print with legendpage_image.png
+    - Set "components/codemirror" archive to zip format
+    - Remove static argument type ComposerBootstrap::checkConfiguration
+    - Add composer "gen-api-docs" and "gen-user-docs" commands
+    - Set 3.0.6 version CONTRIBUTING.md, README.md and parameters.yml.dist
+    - Move FOM, Mapbender, documentaiton/_exts and OwsProxy to composer
+    - Remove LDAP components to Mapbender/Ldap Bundle as composer 'mapbender/ldap' module
+    - Set digitizer version to 1.1.x
+    - Fix fix dropdown scrolls background
+    - Fix view permission for instance creating and acl handling
+    - Fix ComposerBootstrap to use new Event composer type
+    - Remove abstract typed class definition from mapbender.geosource.js Hotfix/view permission for instance creating Fix set parameters by create meta data object
+    - Fix getting permission for creating objects Add to print and imageexport elements content-type image/png8 and image/png handlling abilites
+    - Fix duplicate loads of WMS
+    - Fix showing feature iframe informations as tab
+    - Fix print second opened feature
+    - Fix showing feature informations as tabs
+    - Fix show feature info's in mobile apps
+    - Enable test travis on PHP 7.0
+    - Show line ruler measure reverse (first measure on top)
+    - Improve line ruler
+    - Deselect base source by creating WMS Instance
+    - Fix displaying feature info iframe content and draw container border
+    - Fix applciation copy permissions check by not root user
+    - Fix feature info reopen dialog if active
+    - Impove login, register, password screens (mobile responsive)
+    - Update and fix joii component version
+    - Improve SCSS to CSS generation performance on windows
     - Update build.properties because of quotes
     - Install instead composer update by build with phing
     - Add release composer command

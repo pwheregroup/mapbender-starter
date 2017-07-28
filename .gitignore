@@ -5,8 +5,8 @@
 */web/bundles
 */web/doc
 */web/uploads
-application/web/docs/
 
+application/web/docs/
 
 application/web/xmlschemas/*
 !application/web/xmlschemas/http___www_opengis_net*
@@ -38,3 +38,11 @@ application/bin/*
 
 # Composer asset components
 application/web/components/
+
+application/fom
+application/owsproxy
+application/mapbender
+documentaion/_exts
+
+# Distribution files
+/application/dist/
