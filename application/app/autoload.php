@@ -1,7 +1,7 @@
 <?php
 
-use Composer\Autoload\ClassLoader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Composer\Autoload\ClassLoader;
 
 /**
  * @var ClassLoader $loader
@@ -9,6 +9,8 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 $loader = require __DIR__.'/../vendor/autoload.php';
 
 $loader->add('Mapbender', __DIR__.'/../mapbender/src');
+$loader->add('FOM', __DIR__.'/../fom/src');
+$loader->add('OwsProxy3', __DIR__.'/../owsproxy/src');
 
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
