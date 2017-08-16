@@ -1,0 +1,39 @@
+image: wg-runner/php7
+
+before_script:
+  - cd application
+  - echo $(echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#')
+  - export PROJECT_NAME=$(bin/composer project-name)
+  - export NEXT_VERSION_SHORT=$(bin/composer version git next-revision)
+  - export NEXT_VERSION=$(bin/composer version git next-revision)-$(git rev-parse --short HEAD)
+  - export CI_PUSH_REPO=$CI_BUILD_REPO | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#'
+  - bin/composer install -o --no-dev
+  - bin/composer init-example
+  - app/console assets:install --symlink --relative
+
+stages:
+  - package
+  # - release
+
+package:
+  stage: package
+  variables:
+    PROJECT_NAME: "$$PROJECT_NAME"
+    NEXT_VERSION_SHORT: "$$NEXT_VERSION_SHORT"
+    NEXT_VERSION: "$$NEXT_VERSION"
+
+  script:
+    - bin/composer "build" "tar.gz" "${PROJECT_NAME}" "${NEXT_VERSION}"
+    - git tag "${PROJECT_NAME}-${NEXT_VERSION_SHORT}"
+
+  artifacts:
+    name: "$(git describe --tags)-$(git rev-parse --short HEAD)"
+    paths:
+      - "${CI_PROJECT_DIR}/dist/*.tar.gz"
+    expire_in: 1 week
+
+#release:
+#  stage: release
+#  script:
+#    - git remote set-url --push origin "$(echo $CI_REPOSITORY_URL | perl -pe 's#.*@(.+?(\:\d+)?)/#git@\1:#')"
+#    - git push origin --tags
