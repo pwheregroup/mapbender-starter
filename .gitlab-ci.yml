@@ -23,6 +23,7 @@ package:
     NEXT_VERSION: "$$NEXT_VERSION"
 
   script:
+    - bin/composer "docs"
     - bin/composer "build" "tar.gz" "${PROJECT_NAME}" "${NEXT_VERSION}"
     - git tag "${PROJECT_NAME}-${NEXT_VERSION_SHORT}"
 
