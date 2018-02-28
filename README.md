@@ -2,9 +2,9 @@
 
 Mapbender is a web based geoportal framework.
 
-The [official site](http://mapbender.org/?q=en) contains [documentation](http://mapbender.org/?q=en/documentation) and [installation information](http://doc.mapbender3.org/en/book/installation.html) ([also available in German](http://doc.mapbender.org/de/book/installation.html)).
+The [official site](http://mapbender.org/?q=en) contains [documentation](http://mapbender.org/?q=en/documentation) and [installation information](http://doc.mapbender.org/en/book/installation.html) ([also available in German](http://doc.mapbender.org/de/book/installation.html)).
 
-To install Mapbender3 from this Git-repository, please read the guide of the [Git-based installation](http://doc.mapbender3.org/en/book/installation/installation_git.html) ([in German](http://doc.mapbender3.org/de/book/installation/installation_git.html)).
+To install Mapbender3 from this Git-repository, please read the guide of the [Git-based installation](http://doc.mapbender.org/en/book/installation/installation_git.html) ([in German](http://doc.mapbender.org/de/book/installation/installation_git.html)).
 
 
 ## Branches
@@ -31,12 +31,12 @@ Please report issues at the [Mapbender repository here at Github](https://github
 
 ## Other downloads
 
-Pre-built Tarballs and Zip files (where all subbodules and Symfony bundles are integrated) are available at our [Download page](http://mapbender3.org/download).
+Pre-built Tarballs and Zip files (where all subbodules and Symfony bundles are integrated) are available at our [Download page](http://mapbender.org/download).
 
 
 ## Mapbender demo & sandbox
 
-Wanna see Mapbender live? A demo installation is available at http://demo.mapbender3.org/.
+Wanna see Mapbender live? A demo installation is available at http://demo.mapbender.org/.
 
 
 ## Follow us on Twitter
